@@ -1,0 +1,66 @@
+{
+  "Main" : {
+    "nav_heading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading3, heading4, heading5, heading6",
+        "label" : "Nav Heading"
+      }
+    },
+    "nav_sub_heading" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading4, heading5, heading6",
+        "label" : "Nav Sub Heading"
+      }
+    },
+    "hero_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Hero Image"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "anchor" : [ {
+            "name" : "anchor",
+            "display" : "anchor"
+          } ],
+          "nav_bar" : [ ]
+        },
+        "choices" : {
+          "anchor" : {
+            "type" : "Slice",
+            "fieldset" : "Anchor",
+            "description" : "Anchor point on the page to link to in the nav bar",
+            "icon" : "art_track",
+            "display" : "list",
+            "non-repeat" : {
+              "anchor" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Anchor"
+                }
+              },
+              "icon" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "icon"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}

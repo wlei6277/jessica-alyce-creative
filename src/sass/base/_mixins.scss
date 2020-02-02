@@ -1,0 +1,130 @@
+/*=============================================>>>>>
+= Placeholder =
+===============================================>>>>>*/
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+/*=============================================>>>>>
+= Animations =
+===============================================>>>>>*/
+
+@mixin keyframes ($animation_name) {
+  @keyframes $animation_name {
+    @content;
+  }
+}
+
+@mixin animation ($animation: bounceIn, $duration: 1s, $delay: 0s) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+/*=============================================>>>>>
+= Button =
+===============================================>>>>>*/
+
+@mixin button($background: $primary, $color: $white, $border: $primary, $hoverBg: $background, $hoverColor: $color, $hoverBorder: $border) {
+  display: inline-block;
+  background: $background;
+  color: $color;
+  padding: 8px 25px;
+  border: 1px solid $border;
+  border-radius: 3px;
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  line-height: 1.4em;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s;
+  @include media-down(iphone-plus) {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+  .arrow-icon {
+    margin-left: 6px;
+    @include media-down(iphone-plus) {
+      margin-left: 2px;
+    }
+  }
+  .arrow-icon-fill {
+    stroke: $color;
+  }
+  &:hover {
+    background: $hoverBg;
+    color: $hoverColor;
+    border-color: $hoverBorder;
+    text-decoration: none;
+    transform: translateY(-3px);
+    .arrow-icon {
+      transform: translate3d(5px, 0, 0);
+    }
+    .arrow-icon-fill {
+      stroke: $hoverColor;
+    }
+    .arrow-icon--circle {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+/*=============================================>>>>>
+= Ellipsis =
+===============================================>>>>>*/
+
+@mixin ellipsis($width: 100%) {
+  display: inline-block;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*=============================================>>>>>
+= Position =
+===============================================>>>>>*/
+
+@mixin vertical-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-align($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+/*=============================================>>>>>
+= Clearfix =
+===============================================>>>>>*/
+
+@mixin clear {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    *zoom:1;
+  }
+}
