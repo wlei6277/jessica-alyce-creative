@@ -10,8 +10,8 @@ const homeSchema = require('./.prismic/home.json');
 
 module.exports = {
   siteMetadata: {
-    title: `Billy Leitch || JavaScript Developer`,
-    description: `A project to exhibit my web development portfolio and front end skills`,
+    title: `Jessica Alyce Creative`,
+    description: `Bondi based freelance stylist`,
     author: `Billy Leitch`,
   },
   plugins: [
