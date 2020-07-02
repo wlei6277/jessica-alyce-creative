@@ -1,1 +1,1 @@
-export { Anchor } from './Anchor/Anchor';
+export { Wysiwyg } from './Wysiwyg/Wysiwyg';

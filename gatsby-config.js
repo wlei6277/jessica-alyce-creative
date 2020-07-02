@@ -6,7 +6,10 @@ const path = require('path');
 
 const { PRISMIC_REPO_NAME } = process.env;
 
-const homeSchema = require('./.prismic/home.json');
+// const homeSchema = require('./.prismic/home.json');
+const headerSchema = require('./.prismic/header.json');
+const settingsSchema = require('./.prismic/settings.json');
+const pageSchema = require('./.prismic/page.json');
 
 module.exports = {
   siteMetadata: {
@@ -56,7 +59,7 @@ module.exports = {
       options: {
         repositoryName: PRISMIC_REPO_NAME,
         linkResolver: ({ node, key, value }) => doc => `/${doc.uid}`,
-        schemas: { home: homeSchema },
+        schemas: { header: headerSchema, settings: settingsSchema, page: pageSchema },
         fetchLinks: ['category.uid'],
       },
     },

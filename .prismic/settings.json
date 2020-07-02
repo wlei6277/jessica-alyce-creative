@@ -1,0 +1,19 @@
+{
+  "Main": {
+    "social_links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "link"
+            }
+          }
+        },
+        "label": "Social Links"
+      }
+    }
+  }
+}

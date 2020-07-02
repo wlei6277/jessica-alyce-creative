@@ -1,40 +1,40 @@
 {
-  "Main": {
-    "title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label": "Title"
+  "Main" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label" : "Title"
       }
     },
-    "capabilities": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "capability": {
-            "type": "Text",
-            "config": {
-              "label": "Capability",
-              "placeholder": "These appear under the title"
+    "capabilities" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "capability" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Capability",
+              "placeholder" : "These appear under the title"
             }
           }
         },
-        "label": "Capabilities"
+        "label" : "Capabilities"
       }
     },
-    "links": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "link": {
-            "type": "Link",
-            "config": {
-              "label": "Link",
-              "placeholder": "Use these to link to other pages"
+    "links" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "link" : {
+            "type" : "Link",
+            "config" : {
+              "label" : "Link",
+              "placeholder" : "Use these to link to other pages"
             }
           }
         },
-        "label": "Links"
+        "label" : "Links"
       }
     }
   }
