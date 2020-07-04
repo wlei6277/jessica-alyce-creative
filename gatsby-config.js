@@ -58,9 +58,10 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: PRISMIC_REPO_NAME,
-        linkResolver: ({ node, key, value }) => doc => `/${doc.uid}`,
+        linkResolver: () => doc => `/${doc.uid}`,
         schemas: { header: headerSchema, settings: settingsSchema, page: pageSchema },
         fetchLinks: ['category.uid'],
+        shouldDownloadImage: () => true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

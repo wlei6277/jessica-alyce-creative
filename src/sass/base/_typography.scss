@@ -14,16 +14,16 @@ $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
 @mixin heading-font() {
-  font-family: 'Lato', sans-serif;
+  font-family: 'playfair display', serif;
   font-weight: $font-weight-bold;
 }
 
 @mixin body-font() {
-  font-family: 'Lato', sans-serif;
+  font-family: 'brandon-grot-w01-light', serif;
 }
 
 @mixin medium-font {
-  font-family: 'Plain', sans-serif;
+  font-family: 'Plain', serif;
   font-weight: $font-weight-medium;
 }
 
