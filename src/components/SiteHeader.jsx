@@ -55,7 +55,7 @@ const Tabs = ({ links }) => (
 );
 
 const SiteHeaderUi = props => {
-  const headerData = props?.prismicSiteHeader?.data;
+  const headerData = props?.prismicHeader?.data;
 
   if (!headerData) return null;
 
