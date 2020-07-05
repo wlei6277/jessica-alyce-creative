@@ -1,5 +1,6 @@
 import React from 'react';
 import OnVisible from 'react-on-visible';
+import shortid from 'shortid';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import './Header.scss';
 
@@ -34,10 +35,10 @@ const Capabilities = ({ capabilities }) => {
   return (
     <div className="header-capabilities">
       {capabilities?.map(({ capability }, index) => (
-        <>
+        <div key={shortid.generate()} className="capability-container">
           <span>{capability}</span>
           {!checkIsLast(index) && <span className="capability-spacer">.</span>}
-        </>
+        </div>
       ))}
     </div>
   );
@@ -46,7 +47,9 @@ const Capabilities = ({ capabilities }) => {
 const Tabs = ({ links }) => (
   <div className="header-tabs">
     {links?.map(({ link, link_text: text }) => (
-      <Link to={link?.url}>{text?.text}</Link>
+      <Link to={link?.url} key={shortid.generate()}>
+        {text?.text}
+      </Link>
     ))}
   </div>
 );

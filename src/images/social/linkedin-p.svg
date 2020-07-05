@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="38" height="38" rx="19"></rect>
+        <filter x="-39.5%" y="-39.5%" width="178.9%" height="178.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Checkout-step-1-Copy-11" transform="translate(-772.000000, -341.000000)" fill-rule="nonzero">
+            <g id="Group-2" transform="translate(492.000000, 351.000000)">
+                <g id="linkedin" transform="translate(290.000000, 0.000000)">
+                    <g id="Rectangle">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M28.2619048,8 L10.7380952,8 C9.22666667,8 8,9.22666667 8,10.7380952 L8,28.2619048 C8,29.7733333 9.22666667,31 10.7380952,31 L28.2619048,31 C29.7733333,31 31,29.7733333 31,28.2619048 L31,10.7380952 C31,9.22666667 29.7733333,8 28.2619048,8 Z M15.1190476,16.7619048 L15.1190476,27.1666667 L11.8333333,27.1666667 L11.8333333,16.7619048 L15.1190476,16.7619048 Z M11.8333333,13.7335714 C11.8333333,12.9669048 12.4904762,12.3809524 13.4761905,12.3809524 C14.4619048,12.3809524 15.0807143,12.9669048 15.1190476,13.7335714 C15.1190476,14.5002381 14.5057143,15.1190476 13.4761905,15.1190476 C12.4904762,15.1190476 11.8333333,14.5002381 11.8333333,13.7335714 Z M27.1666667,27.1666667 L23.8809524,27.1666667 C23.8809524,27.1666667 23.8809524,22.0957143 23.8809524,21.6904762 C23.8809524,20.5952381 23.3333333,19.5 21.9642857,19.4780952 L21.9204762,19.4780952 C20.5952381,19.4780952 20.047619,20.6061905 20.047619,21.6904762 C20.047619,22.1888095 20.047619,27.1666667 20.047619,27.1666667 L16.7619048,27.1666667 L16.7619048,16.7619048 L20.047619,16.7619048 L20.047619,18.1638095 C20.047619,18.1638095 21.1045238,16.7619048 23.2292857,16.7619048 C25.4033333,16.7619048 27.1666667,18.2569048 27.1666667,21.2852381 L27.1666667,27.1666667 Z" id="Shape" fill="#007BB6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

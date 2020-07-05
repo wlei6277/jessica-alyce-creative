@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="38" height="38" rx="19"></rect>
+        <filter x="-39.5%" y="-39.5%" width="178.9%" height="178.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Checkout-step-1-Copy-11" transform="translate(-675.000000, -341.000000)">
+            <g id="Group-2" transform="translate(492.000000, 351.000000)">
+                <g id="facebook" transform="translate(193.000000, 0.000000)">
+                    <g id="Rectangle" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M19,7 C12.3727273,7 7,12.3727273 7,19 C7,25.0163636 11.4318182,29.9838182 17.2065455,30.8516364 L17.2065455,22.1805455 L14.2376364,22.1805455 L14.2376364,19.0261818 L17.2065455,19.0261818 L17.2065455,16.9272727 C17.2065455,13.4521818 18.8996364,11.9265455 21.7878182,11.9265455 C23.1710909,11.9265455 23.9025455,12.0290909 24.2489091,12.076 L24.2489091,14.8294545 L22.2787273,14.8294545 C21.0525455,14.8294545 20.6243636,15.9918182 20.6243636,17.302 L20.6243636,19.0261818 L24.2178182,19.0261818 L23.7301818,22.1805455 L20.6243636,22.1805455 L20.6243636,30.8772727 C26.4814545,30.0825455 31,25.0747273 31,19 C31,12.3727273 25.6272727,7 19,7 Z" id="Path" fill="#3B5998"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

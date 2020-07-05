@@ -4,6 +4,21 @@
       "type": "Group",
       "config": {
         "fields": {
+          "platform": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "Facebook",
+                "Instagram",
+                "Twitter",
+                "LinkedIn",
+                "Google",
+                "Pintrest",
+                "Email"
+              ],
+              "label": "Platform"
+            }
+          },
           "link": {
             "type": "StructuredText",
             "config": {

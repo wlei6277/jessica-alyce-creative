@@ -133,16 +133,17 @@
 
   .slick-next {
     position: absolute;
-    // background: url("./../../../images/icons/reward-next.s vg");
+    background: url("./../images/icons/arrow-outline-right.svg");
     background-position: center;
     background-size: cover;
   }
 
   .slick-prev {
     position: absolute;
-    // background: url("./../../../images/icons/reward-prev.svg");
+    background: url("./../images/icons/arrow-outline-left.svg");
     background-position: center;
     background-size: cover;
+    // transform: rotate(180deg);
   }
 
   .slick-next.slick-disabled:before,

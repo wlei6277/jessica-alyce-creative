@@ -40,6 +40,7 @@ export const query = graphql`
         body {
           ...WysiwygPageFragment
           ...TaglinePageFragment
+          ...CarouselPageFragment
         }
       }
     }
