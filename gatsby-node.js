@@ -1,9 +1,46 @@
 const path = require('path');
 
-exports.createPages = async ({ grapqhl, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const pages = await grapqhl(`
+  const resolveTemplate = templateName => path.resolve(`src/templates/${templateName}.jsx`);
+
+  const destructureEdges = (response, prismicField) => response.data[`${prismicField}`].edges;
+
+  const checkLandingPage = (uid, route) => `${uid === 'home' || uid === route ? '' : uid}`;
+
+  const mapPage = (route, pageType) =>
+    createPage({
+      path: route,
+      component: resolveTemplate(pageType),
+    });
+
+  const mapPages = async (res, pageType, prismicField, route) => {
+    // Get template component
+    const template = resolveTemplate(pageType);
+    // Pluck the page data off the graphql response
+    const pageData = destructureEdges(res, prismicField);
+    // Check if the homepage exists
+    if (pageType === 'page' && !pageData.find(edge => edge.node.uid === 'home')) {
+      throw Error('Create page with slug home');
+    }
+
+    pageData.forEach(edge => {
+      const {
+        node: { uid, data },
+      } = edge;
+
+      createPage({
+        path: `${route}/${checkLandingPage(uid, route)}`,
+        component: template,
+        context: {
+          uid,
+        },
+      });
+    });
+  };
+
+  const pages = await graphql(`
     {
       allPrismicPage {
         edges {
@@ -15,15 +52,7 @@ exports.createPages = async ({ grapqhl, actions }) => {
     }
   `);
 
-  pages.forEach(edge => {
-    const uid = edge?.node?.uid;
-
-    return createPage({
-      path: uid === 'home' ? '/' : uid,
-      template: path.resolve('src/templates/page.jsx'),
-      context: { uid },
-    });
-  });
+  mapPages(pages, 'page', 'allPrismicPage', '');
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {

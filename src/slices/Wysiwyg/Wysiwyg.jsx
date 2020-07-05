@@ -9,7 +9,7 @@ export const Wysiwyg = ({
     items,
   },
 }) => (
-  <OnVisible className={`${customClass || ''}`} percent={20}>
+  <OnVisible className={`${customClass?.text || ''}`} percent={20}>
     {title?.html && <div dangerouslySetInnerHTML={{ __html: title?.html }} />}
     {items.map(item => {
       const { image, content } = item;

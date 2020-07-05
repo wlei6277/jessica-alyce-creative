@@ -2,18 +2,16 @@
 = Breakpoints =
 ===============================================>>>>>*/
 $breakpoints: (
-  4k: 2300px,
-  large: 1600px,
+  giant: 2200px,
+  large-desktop: 1600px,
   desktop: 1340px,
-  wrapper: 1200px,
-  ipad-pro: 1025px,
-  nine-twenty: 920px,
-  ipad: 769px,
-  iphone-plus-landscape: 738px,
-  iphone-plus: 415px,
-  iphone: 376px,
-  galaxy-s5: 361px,
-  iphone-5: 321px,
+  small-desktop: 1260px,
+  large-tablet: 1025px,
+  tablet: 769px,
+  small-tablet: 660px,
+  large-mobile: 500px,
+  mobile: 400px,
+  small-mobile: 340px
 );
 
 /*=============================================>>>>>
@@ -103,4 +101,19 @@ $breakpoints: (
       @warn 'Your upper breakpoint was invalid: #{$upper}.';
     }
   }
+}
+
+/*=============================================>>>>>
+= Images =
+===============================================>>>>>*/
+
+@mixin featured-image() {
+  object-position: center;
+  overflow: hidden;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+@mixin featured-image-cover() {
+  object-fit: cover;
 }

@@ -1,4 +1,6 @@
 #layout {
-  display: grid;
-  grid-template-columns:300px 1fr;
+  .wrapper {
+    text-align: center;
+    padding: 20px 40px;
+  }
 }

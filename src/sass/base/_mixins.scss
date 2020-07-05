@@ -2,7 +2,19 @@
 = Placeholder =
 ===============================================>>>>>*/
 @mixin placeholder {
-  &::placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
     @content;
   }
 }
@@ -12,64 +24,44 @@
 ===============================================>>>>>*/
 
 @mixin keyframes ($animation_name) {
+  @-webkit-keyframes $animation_name {
+    @content;
+  }
+
+  @-moz-keyframes $animation_name {
+    @content;
+  }
+
+  @-o-keyframes $animation_name {
+    @content;
+  }
+
   @keyframes $animation_name {
     @content;
   }
 }
 
+
 @mixin animation ($animation: bounceIn, $duration: 1s, $delay: 0s) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
   animation-delay: $delay;
   animation-duration: $duration;
   animation-name: $animation;
   animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-}
-
-/*=============================================>>>>>
-= Button =
-===============================================>>>>>*/
-
-@mixin button($background: $primary, $color: $white, $border: $primary, $hoverBg: $background, $hoverColor: $color, $hoverBorder: $border) {
-  display: inline-block;
-  background: $background;
-  color: $color;
-  padding: 8px 25px;
-  border: 1px solid $border;
-  border-radius: 3px;
-  font-weight: $font-weight-bold;
-  font-size: 16px;
-  line-height: 1.4em;
-  text-align: center;
-  transform: translateY(0);
-  transition: transform 0.3s;
-  @include media-down(iphone-plus) {
-    font-size: 14px;
-    padding: 12px 20px;
-  }
-  .arrow-icon {
-    margin-left: 6px;
-    @include media-down(iphone-plus) {
-      margin-left: 2px;
-    }
-  }
-  .arrow-icon-fill {
-    stroke: $color;
-  }
-  &:hover {
-    background: $hoverBg;
-    color: $hoverColor;
-    border-color: $hoverBorder;
-    text-decoration: none;
-    transform: translateY(-3px);
-    .arrow-icon {
-      transform: translate3d(5px, 0, 0);
-    }
-    .arrow-icon-fill {
-      stroke: $hoverColor;
-    }
-    .arrow-icon--circle {
-      stroke-dashoffset: 0;
-    }
-  }
 }
 
 /*=============================================>>>>>

@@ -1,12 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout, Nav, Image } from 'components';
+import { Layout } from 'components';
+import { Slice } from '../slices/Slice';
 
 export const Page = props => {
-  const { data } = props;
+  const pageData = props?.data.prismicPage?.data;
+
+  const sliceData = pageData?.body;
+
   return (
     <Layout>
-      <div className="wrapper">{/* <Image image={heroImage} className="hero-image" /> */}</div>
+      <div className="wrapper">
+        {sliceData?.map(slice => (
+          <Slice key={slice.id} data={slice} />
+        ))}
+      </div>
     </Layout>
   );
 };
@@ -29,9 +37,10 @@ export const query = graphql`
           alt
           url
         }
-        # body {
-        #   ...AnchorHomeFragment
-        # }
+        body {
+          ...WysiwygPageFragment
+          ...TaglinePageFragment
+        }
       }
     }
   }

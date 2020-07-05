@@ -5,17 +5,17 @@
 $font-folder-path: "../../fonts" !default;
 
 // Google Fonts Import
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 
 // Local Font File Import
-@font-face {
-    font-family: 'Open Sans';
-    src: url('#{$font-folder-path}/OpenSans.woff2') format('woff2'),
-        url('#{$font-folder-path}/OpenSans.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url('#{$font-folder-path}/OpenSans.woff2') format('woff2'),
+//         url('#{$font-folder-path}/OpenSans.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 
 /* ICONOGRAPHY ==================================== */

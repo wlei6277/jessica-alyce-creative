@@ -4,16 +4,18 @@
 
 body {
   @include body-font();
-  font-size: 16px;
+  font-size: 15px;
   font-weight: $font-weight-regular;
   font-size-adjust: auto;
-  line-height: 1.75em;
+  line-height: 1.7em;
   text-align: left;
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
+  text-shadow: 0 0 1px transparent;
+  background: $white;
   color: $textcolor;
-  @include media-down(iphone-plus) {
+  @include media-down(mobile) {
     font-size: 14px;
   }
 }
@@ -37,29 +39,20 @@ h4,
 h5,
 h6 {
   @include heading-font();
+  color: $primary;
   line-height: 1.2em;
   &:first-child {
     margin-top: 0;
   }
 }
 
-h1 { font-size: 36px; }
-h2 { font-size: 32px; }
-h3 { font-size: 24px; }
-h4 { font-size: 16px; }
+h1 { @include h1; }
+h2 { @include h2; }
+h3 { @include h3; }
+h4 { @include h4; }
 h5 { font-size: 16px; }
 h6 { font-size: 14px; }
 
-@include media-down(iphone-plus) {
-
-  h1 { font-size: 24px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 20px; }
-  h4 { font-size: 14px; }
-  h5 { font-size: 14px; }
-  h6 { font-size: 14px; }
-
-}
 
 // --------------------------------------------------------------------------
 //   Content Elements
@@ -67,20 +60,28 @@ h6 { font-size: 14px; }
 
 a {
   text-decoration: none;
-  &:hover,
-  &:focus {
+  color: $textcolor;
+  &:hover {
     text-decoration: underline;
-    cursor: pointer;
   }
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 strong {
   font-weight: $font-weight-bold;
+}
+
+ul, ol {
+  list-style: disc;
+  margin: 0 0 15px;
+  padding: 0 0 0 20px;
+  li {
+    margin: 0 0 7px;
+  }
 }
 
 figure {

@@ -1,5 +1,12 @@
 {
   "Main": {
+    "prismic_reference": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Prismic Reference"
+      }
+    },
     "uid": {
       "type": "UID",
       "config": {
@@ -21,7 +28,8 @@
         "labels": {
           "carousel": [],
           "wysiwyg": [],
-          "grid": []
+          "grid": [],
+          "tagline": []
         },
         "choices": {
           "carousel": {
@@ -135,6 +143,23 @@
                 }
               }
             }
+          },
+          "tagline": {
+            "type": "Slice",
+            "fieldset": "Tagline",
+            "description": "Eyegrabbing copy to convert your users",
+            "icon": "explicit",
+            "display": "list",
+            "non-repeat": {
+              "tagline": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em",
+                  "label": "tagline"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }

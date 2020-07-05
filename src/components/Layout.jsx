@@ -1,12 +1,12 @@
 import React from 'react';
-import { Nav } from 'components';
+import { Header } from 'components';
 import '../sass/global/styles.scss';
 import 'typeface-lato';
 import './Layout.scss';
 
-export const Layout = ({ children, navProps }) => (
+export const Layout = ({ children }) => (
   <div id="layout">
-    <Nav {...navProps} />
+    <Header />
     <main>{children}</main>
   </div>
 );
