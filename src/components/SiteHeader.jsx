@@ -2,11 +2,11 @@ import React from 'react';
 import OnVisible from 'react-on-visible';
 import shortid from 'shortid';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import './Header.scss';
+import './SiteHeader.scss';
 
 const headerQuery = graphql`
   {
-    prismicHeader {
+    prismicSiteHeader {
       data {
         capabilities {
           capability
@@ -54,8 +54,8 @@ const Tabs = ({ links }) => (
   </div>
 );
 
-const HeaderUi = props => {
-  const headerData = props?.prismicHeader?.data;
+const SiteHeaderUi = props => {
+  const headerData = props?.prismicSiteHeader?.data;
 
   if (!headerData) return null;
 
@@ -78,4 +78,6 @@ const HeaderUi = props => {
   );
 };
 
-export const Header = () => <StaticQuery query={headerQuery} render={queryData => <HeaderUi {...queryData} />} />;
+export const SiteHeader = () => (
+  <StaticQuery query={headerQuery} render={queryData => <SiteHeaderUi {...queryData} />} />
+);

@@ -4,7 +4,7 @@ export { Image } from './Image';
 export { SEO } from './SEO';
 export { Link } from './Link';
 export { Nav } from './Nav';
-export { Header } from './Header';
+export { SiteHeader } from './SiteHeader';
 export { SlickCarousel } from './SlickCarousel';
 export { SocialLinks } from './SocialLinks';
 export { Footer } from './Footer';
