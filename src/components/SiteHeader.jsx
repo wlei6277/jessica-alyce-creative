@@ -6,7 +6,7 @@ import './SiteHeader.scss';
 
 const headerQuery = graphql`
   {
-    prismicSiteHeader {
+    prismicHeader {
       data {
         capabilities {
           capability
