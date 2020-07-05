@@ -4,6 +4,9 @@ require('dotenv').config({
 
 const path = require('path');
 
+// Configuration file
+const website = require('./config/website');
+
 const { PRISMIC_REPO_NAME } = process.env;
 
 // const homeSchema = require('./.prismic/home.json');
@@ -43,15 +46,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: website.title,
+        short_name: website.shortName,
+        description: website.description,
+        start_url: '/',
+        background_color: website.backgroundColor,
+        theme_color: website.themeColor,
+        display: 'standalone',
+        icon: website.favicon,
       },
     },
     {
