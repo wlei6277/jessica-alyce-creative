@@ -8,6 +8,11 @@
   padding-top: 110px;
   display: flex;
   justify-content: center;
+
+  @include media-down(small-tablet) {
+    padding-top: 40px;
+  }
+
   a:hover {
     text-decoration-line: none;
   }
@@ -20,12 +25,20 @@
   font-size: 48px;
   letter-spacing: 0.1em;
   color: $primary;
+
+  @include media-down(small-tablet) {
+    font-size: 30px;
+  }
 }
 
 .header-capabilities {
   span {
     font-size: 14px;
     text-transform: uppercase;
+
+    @include media-down(small-tablet) {
+      font-size: 12px;
+    }
   }
 
   letter-spacing: 0.5em;

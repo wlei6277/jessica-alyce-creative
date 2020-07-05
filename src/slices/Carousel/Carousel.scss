@@ -3,5 +3,13 @@
   
   .carousel-image {
     height: 500px;
+
+    @include media-down(small-tablet) {
+      height: 470px;
+    }
+
+    // @include media-down(mobile) {
+    //   height: 300px;
+    // }
   }
 }

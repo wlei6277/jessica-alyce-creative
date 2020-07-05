@@ -9,6 +9,7 @@ export const Carousel = ({ data: { items } }) => {
     arrows: true,
     dots: false,
     adaptiveHeight: true,
+    // centerMode: true,
     responsive: [
       {
         breakpoint: 750,
@@ -21,7 +22,7 @@ export const Carousel = ({ data: { items } }) => {
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
         },
