@@ -9,7 +9,6 @@ const website = require('./config/website');
 
 const { PRISMIC_REPO_NAME } = process.env;
 
-// const homeSchema = require('./.prismic/home.json');
 const headerSchema = require('./.prismic/header.json');
 const settingsSchema = require('./.prismic/settings.json');
 const pageSchema = require('./.prismic/page.json');
@@ -33,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         data: '@import "resources.scss";',
-        includePaths: ['src/sass/base'],
+        includePaths: ['src/sass/base', 'src'],
       },
     },
     `gatsby-transformer-sharp`,
