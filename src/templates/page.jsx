@@ -6,6 +6,8 @@ import { Slice } from '../slices/Slice';
 export const Page = props => {
   const pageData = props?.data.prismicPage?.data;
 
+  // const { body: sliceData, }
+
   const sliceData = pageData?.body;
 
   return (
@@ -21,9 +23,9 @@ export const Page = props => {
 
 export default Page;
 
-export const query = graphql`
-  {
-    prismicPage {
+export const pageQuery = graphql`
+  query PageBySlug($uid: String!) {
+    prismicPage(uid: { eq: $uid }) {
       data {
         hero_image {
           localFile {

@@ -17,14 +17,7 @@ const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix;
 console.log(pathPrefix);
 
 // Environment variables
-const {
-  IS_STAGING,
-  SITE_URL,
-  PRISMIC_REPO_NAME,
-  API_KEY,
-  NODE_ENV,
-  gatsby_executing_command: GATSBY_CMD,
-} = process.env;
+const { IS_STAGING, SITE_URL, PRISMIC_REPO_NAME, gatsby_executing_command: GATSBY_CMD } = process.env;
 
 // Env variable check
 if (GATSBY_CMD !== 'serve') {
@@ -91,7 +84,7 @@ module.exports = {
         name: website.title,
         short_name: website.shortName,
         description: website.description,
-        start_url: '/',
+        start_url: pathPrefix,
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: 'standalone',
