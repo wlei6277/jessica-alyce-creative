@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     pageData.forEach(edge => {
-      const uid = edge?.node?.uid;
+      const { uid } = edge.node;
 
       createPage({
         path: `${route}/${checkLandingPage(uid, route)}`,
