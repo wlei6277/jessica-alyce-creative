@@ -1,5 +1,5 @@
-import React from 'react';
 import Img from 'gatsby-image';
+import React from 'react';
 import './Image.scss';
 
 export const Image = props => {
@@ -8,7 +8,12 @@ export const Image = props => {
   const { localFile } = image;
   // Gifs do not work with Gatsby image. If concerned the Prismic user may add a gif to a slice / field query for the extension
   if (localFile && localFile.extension && (localFile.extension === 'gif' || localFile.extension === 'svg')) {
-    return <img className={`gatsby-image ${className}`} src={localFile.url} alt={image.alt || ''} />;
+    const src = localFile.url || image.url;
+    return (
+      <div className="gatsby-image">
+        <img src={src} alt={image.alt || ''} />
+      </div>
+    );
   }
   if (localFile && localFile.childImageSharp && localFile.childImageSharp.fluid) {
     return (

@@ -5,7 +5,7 @@
   display: grid;
   grid-template-rows: fit-content fit-content 1fr;
   grid-template-columns: 100%;
-  padding-top: 110px;
+  padding-top: 80px;
   display: flex;
   justify-content: center;
 
@@ -38,7 +38,12 @@
 
     @include media-down(small-tablet) {
       font-size: 12px;
+      letter-spacing: 0.3em;
     }
+  }
+
+  @include media-down(small-tablet) {
+    padding: 5px 5px 0;
   }
 
   letter-spacing: 0.5em;
@@ -54,4 +59,16 @@
 
 .header-wrapper {
   max-width: 1200px;
+}
+
+.header-tabs {
+  padding: 30px 0 10px;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  font-style: italic;
+  line-height: 40px;
+
+  @include media-down(small-tablet) {
+    padding: 10px 0;
+  }
 }

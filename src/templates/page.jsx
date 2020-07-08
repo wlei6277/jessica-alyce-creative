@@ -1,18 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from 'components';
+import { Layout, Image } from 'components';
 import { Slice } from '../slices/Slice';
+import './page.scss';
 
 export const Page = props => {
   const pageData = props?.data.prismicPage?.data;
 
-  // const { body: sliceData, }
+  const { body: sliceData, layout, hero_image: heroImage } = pageData || {};
 
-  const sliceData = pageData?.body;
+  const defaultLayout = !layout || layout === 'None';
 
   return (
     <Layout>
-      <div className="wrapper">
+      <div className={`wrapper ${defaultLayout ? '' : layout.toLowerCase()}`}>
+        {heroImage && <Image image={heroImage} className="hero-image" />}
         {sliceData?.map(slice => (
           <Slice key={slice.id} data={slice} />
         ))}
@@ -28,17 +30,18 @@ export const pageQuery = graphql`
     prismicPage(uid: { eq: $uid }) {
       data {
         hero_image {
+          alt
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 1800, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
-            extension
           }
           alt
           url
         }
+        layout
         body {
           ...WysiwygPageFragment
           ...TaglinePageFragment

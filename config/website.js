@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  title: 'Jessica Alyce Creative', // Default Site Title used for SEO & PWA
+  title: 'Jessica | Stylist, Sydney', // Default Site Title used for SEO & PWA
   description: 'Bondi based stylist.', // Default Site Decription used for SEO
   siteName: 'Jessica Alyce Creative', // Sitename for Facebook
   siteLanguage: 'en', // Language Tag on <html> element

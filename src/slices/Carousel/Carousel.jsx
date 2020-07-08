@@ -1,5 +1,6 @@
 import React from 'react';
 import shortid from 'shortid';
+import OnVisible from 'react-on-visible';
 import { SlickCarousel, Image } from 'components';
 import './Carousel.scss';
 
@@ -31,10 +32,12 @@ export const Carousel = ({ data: { items } }) => {
   };
 
   return (
-    <SlickCarousel settings={carouselSettings}>
-      {items?.map(item => (
-        <Image image={item.image} key={shortid.generate()} className="carousel-image" />
-      ))}
-    </SlickCarousel>
+    <OnVisible wrappingElement="section" percent={20}>
+      <SlickCarousel settings={carouselSettings}>
+        {items?.map(item => (
+          <Image image={item.image} key={shortid.generate()} className="carousel-image" />
+        ))}
+      </SlickCarousel>
+    </OnVisible>
   );
 };

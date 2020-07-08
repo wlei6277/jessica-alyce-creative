@@ -1,0 +1,12 @@
+.wrapper {
+  &.column {
+    max-width: 1000px;
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+}
+
+.hero-image {
+  max-width: 900px;
+  margin: 20px auto 10px;
+}
