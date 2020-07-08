@@ -9,12 +9,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const checkLandingPage = (uid, route) => `${uid === 'home' || uid === route ? '' : uid}`;
 
-  const mapPage = (route, pageType) =>
-    createPage({
-      path: route,
-      component: resolveTemplate(pageType),
-    });
-
   const mapPages = async (res, pageType, prismicField, route) => {
     // Get template component
     const template = resolveTemplate(pageType);
