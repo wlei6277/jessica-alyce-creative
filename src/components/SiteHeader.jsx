@@ -13,10 +13,7 @@ const headerQuery = graphql`
         }
         links {
           link {
-            url
-          }
-          link_text {
-            text
+            uid
           }
         }
         title {
@@ -44,24 +41,44 @@ const Capabilities = ({ capabilities }) => {
   );
 };
 
-const Tabs = ({ links }) => (
+const Tabs = ({ links, location }) => (
   <div className="header-tabs">
-    {links?.map(({ link, link_text: text }) => (
-      <Link to={link?.url} key={shortid.generate()}>
-        {text?.text}
-      </Link>
+    {links?.map(({ link: { uid } }) => (
+      <Tab key={shortid.generate()} uid={uid} location={location} />
     ))}
   </div>
 );
 
+const Tab = ({ uid: tabUid, location }) => {
+  const locationUid = location?.pathname?.replace(/\//g, '');
+
+  const url = tabUid === 'portfolio' ? '/' : `/${tabUid}`;
+
+  const isLandingPage = locationUid === '';
+
+  const isActive = tabUid === locationUid || (isLandingPage && tabUid === 'portfolio');
+
+  const capitalisedUid = `${tabUid[0].toUpperCase()}${tabUid.slice(1)}`;
+
+  return (
+    <Link to={url} key={shortid.generate()} className={isActive ? 'tab active' : 'tab'}>
+      {capitalisedUid}
+    </Link>
+  );
+};
+
 const SiteHeaderUi = props => {
   const headerData = props?.prismicHeader?.data;
+
+  const location = props?.location;
 
   if (!headerData) return null;
 
   const { capabilities, links, title } = headerData;
 
   const onVisibleProps = { wrappingElement: 'header', id: 'header', className: 'site-header' };
+
+  const tabsProps = { location, links };
 
   return (
     <OnVisible {...onVisibleProps}>
@@ -72,12 +89,12 @@ const SiteHeaderUi = props => {
           </Link>
         )}
         {capabilities && <Capabilities capabilities={capabilities} />}
-        {links && <Tabs links={links} />}
+        {links && <Tabs {...tabsProps} />}
       </div>
     </OnVisible>
   );
 };
 
-export const SiteHeader = () => (
-  <StaticQuery query={headerQuery} render={queryData => <SiteHeaderUi {...queryData} />} />
+export const SiteHeader = ({ location }) => (
+  <StaticQuery query={headerQuery} render={queryData => <SiteHeaderUi {...queryData} location={location} />} />
 );

@@ -10,7 +10,7 @@ export const Carousel = ({ data: { items } }) => {
     arrows: true,
     dots: false,
     adaptiveHeight: true,
-    // centerMode: true,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 750,

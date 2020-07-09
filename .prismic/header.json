@@ -39,14 +39,6 @@
               "label": "Link",
               "placeholder": "Use these to link to other pages"
             }
-          },
-          "link_text": {
-            "type": "StructuredText",
-            "config": {
-              "single": "paragraph",
-              "label": "Link Text",
-              "placeholder": "Text to appear in the button"
-            }
           }
         },
         "label": "Links"

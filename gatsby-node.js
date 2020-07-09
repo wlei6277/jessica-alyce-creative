@@ -7,7 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const destructureEdges = (response, prismicField) => response.data[`${prismicField}`].edges;
 
-  const checkLandingPage = (uid, route) => `${uid === 'home' || uid === route ? '' : uid}`;
+  const checkLandingPage = (uid, route) => `${uid === 'portfolio' || uid === route ? '' : uid}`;
 
   const mapPages = async (res, pageType, prismicField, route) => {
     // Get template component
@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Pluck the page data off the graphql response
     const pageData = destructureEdges(res, prismicField);
     // Check if the homepage exists
-    if (pageType === 'page' && !pageData.find(edge => edge.node.uid === 'home')) {
+    if (pageType === 'page' && !pageData.find(edge => edge.node.uid === 'portfolio')) {
       throw Error('Create page with slug home');
     }
 

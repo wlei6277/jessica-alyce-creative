@@ -5,9 +5,9 @@ import '../sass/global/styles.scss';
 import 'typeface-lato';
 import './Layout.scss';
 
-export const Layout = ({ children }) => (
+export const Layout = ({ children, location }) => (
   <div id="layout">
-    <SiteHeader />
+    <SiteHeader location={location} />
     <SEO />
     <main>{children}</main>
     <Footer />
