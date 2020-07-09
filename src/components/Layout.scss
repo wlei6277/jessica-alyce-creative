@@ -1,11 +1,6 @@
 #layout {
   .wrapper {
     text-align: center;
-    padding: 0 40px 40px;
-
-    @include media-down(small-tablet) {
-      padding: 0 20px 40px;
-    }
   }
 
   section {
